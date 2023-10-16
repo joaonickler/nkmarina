@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.nkmarina.marina</groupId>
-	<artifactId>marina</artifactId>
+	<artifactId>cursomc</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>nkmarina</name>
 	<description>Projeto Nk Marina</description>

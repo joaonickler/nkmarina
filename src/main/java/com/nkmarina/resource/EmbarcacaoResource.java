@@ -14,7 +14,7 @@ import com.nkmarina.domain.Embarcacao;
 import com.nkmarina.repository.EmbarcacaoRepository;
 
 @RestController
-@RequestMapping(value = "/embarcacoes")
+@RequestMapping(value = "/embarcacao")
 public class EmbarcacaoResource {
 
 		
@@ -33,7 +33,7 @@ public class EmbarcacaoResource {
 	
 	
 	@GetMapping("/{id}")
-    public Embarcacao getCategoriaById(@PathVariable Integer id) {
+    public Embarcacao getEmbarcacaoById(@PathVariable Integer id) {
         return embarcacaoRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("Embarcacao não encontrado"));
     }
