@@ -51,3 +51,26 @@ TABLESPACE pg_default;
 
 ALTER TABLE IF EXISTS public.cliente
     OWNER to postgres;
+
+
+
+-- Table: public.agenda
+
+-- DROP TABLE IF EXISTS public.agenda;
+
+CREATE TABLE IF NOT EXISTS public.agenda
+(
+    id_agenda smallint NOT NULL,
+    dh_cadastro date NOT NULL,
+    dh_solicitacao date NOT NULL,
+    id_situacao character(1) COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT agenda_pkey PRIMARY KEY (id_agenda)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.agenda
+    OWNER to postgres;
+
+
+
