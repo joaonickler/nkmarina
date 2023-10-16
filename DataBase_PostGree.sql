@@ -33,3 +33,21 @@ TABLESPACE pg_default;
 
 ALTER TABLE IF EXISTS public.embarcacao
     OWNER to postgres;
+
+
+
+CREATE TABLE IF NOT EXISTS public.cliente
+(
+    id_cliente smallint NOT NULL,
+    nm_cliente character(1) COLLATE pg_catalog."default" NOT NULL,
+    end_cliente character(1) COLLATE pg_catalog."default",
+    tel_cliente character(1) COLLATE pg_catalog."default" NOT NULL,
+    email_cliente character(1) COLLATE pg_catalog."default",
+    dt_inclusao date NOT NULL,
+    CONSTRAINT cliente_pkey PRIMARY KEY (id_cliente)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.cliente
+    OWNER to postgres;
