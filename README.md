@@ -1,6 +1,11 @@
-# nk marina
+# cursomc
+Curso de UML com Nélio Alves.
 
-Projeto Nk Marina
+Link do Curso. 
 
-Esta pasta contem as subPastas do projeto BackEnd (Java-SpringBoot) e
-FrontEnde (Previsto em Angular)
+https://clamed.udemy.com/course/uml-diagrama-de-classes/learn/lecture/9881750#overview
+
+Foram feitos diversos diagramas UML para apredizado e os fontes são parte final do curso. 
+
+Implementaçao em Java Spring Boot.
+Base de Dados PostGree

@@ -8,11 +8,11 @@
 		<version>3.1.4</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.nkmarina.marina</groupId>
+	<groupId>com.marina.nkmarina</groupId>
 	<artifactId>marina</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>nkmarina</name>
-	<description>Projeto Nk Marina</description>
+	<name>marina</name>
+	<description></description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
@@ -38,12 +38,14 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-rest</artifactId>
-		</dependency>				
+		</dependency>	
+					
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>			
