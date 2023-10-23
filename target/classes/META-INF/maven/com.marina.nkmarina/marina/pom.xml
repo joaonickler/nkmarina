@@ -8,11 +8,11 @@
 		<version>3.1.4</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.cesarpereira.cursomc</groupId>
-	<artifactId>cursomc</artifactId>
+	<groupId>com.marina.nkmarina</groupId>
+	<artifactId>marina</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>cursomc</name>
-	<description>estudo caso java modelagem</description>
+	<name>marina</name>
+	<description></description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
