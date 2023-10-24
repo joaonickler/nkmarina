@@ -2,7 +2,10 @@ package com.marina.nkmarina.domain;
 
 import java.io.Serializable;
 import java.util.Date;
+
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.marina.nkmarina.domain.enums.TipoEmbarcacao;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -25,6 +28,8 @@ public class Embarcacao    implements Serializable {
 	private String nm_embarc;	
 	private String id_situacao;
 	private String nr_marinha;
+	private Integer tipo;
+	
 	
 	@JsonFormat(pattern = "dd/MM/yyyy hh:mm")
 	private Date dh_registro;
@@ -34,13 +39,13 @@ public class Embarcacao    implements Serializable {
 		
 	}
 	
-	
+	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name="id_cliente")
 	private Cliente cliente;
 	
 
-	public Embarcacao(Integer id, String nm_embarc, String id_situacao, Date dh_registro, String nr_marinha , Cliente cliente ) {
+	public Embarcacao(Integer id, String nm_embarc, String id_situacao, Date dh_registro, String nr_marinha , Cliente cliente , TipoEmbarcacao tipo ) {
 		super();
 		this.id = id;
 		this.nm_embarc = nm_embarc;
@@ -59,6 +64,15 @@ public class Embarcacao    implements Serializable {
 	public void setCliente(Cliente cliente) {
 		this.cliente = cliente;
 	}
+	
+	public TipoEmbarcacao getTipo() {
+		return TipoEmbarcacao.toEnum(tipo);
+	}
+
+	public void setTipo(TipoEmbarcacao tipo) {
+		this.tipo = tipo.getCod();
+	}
+	
 	
 	
 	public Integer getId() {

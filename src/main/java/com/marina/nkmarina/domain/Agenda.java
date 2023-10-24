@@ -9,6 +9,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -16,9 +18,7 @@ import jakarta.persistence.Table;
 public class Agenda   implements Serializable   {
 
 	private static final long serialVersionUID = 1L;
-	
-	
-	
+		
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id_agenda;	
@@ -30,6 +30,10 @@ public class Agenda   implements Serializable   {
 	private Date dh_solicitacao;
 	
 	private String id_situacao;
+		
+	@ManyToOne
+	@JoinColumn(name="id_cliente")
+	private Cliente cliente;
 	
 	
 	public Agenda() {
@@ -76,18 +80,32 @@ public class Agenda   implements Serializable   {
 		this.id_situacao = id_situacao;
 	}
 
+	
+	public Cliente getCliente() {
+		return cliente;
+	}
+
+
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
+	}
+
+	
+	
 
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
 
 
-	public Agenda(Integer id_agenda, Date dh_cadastro, Date dh_solicitacao, String id_situacao) {
+	public Agenda(Integer id_agenda, Date dh_cadastro, Date dh_solicitacao, String id_situacao, Cliente cliente  ) {
 		super();
 		this.id_agenda = id_agenda;
 		this.dh_cadastro = dh_cadastro;
 		this.dh_solicitacao = dh_solicitacao;
 		this.id_situacao = id_situacao;
+		this.cliente = cliente;
+		
 	}
 
 
@@ -116,6 +134,10 @@ public class Agenda   implements Serializable   {
 			return false;
 		return true;
 	}
+
+
+	
+
 	
 	
 	
