@@ -12,47 +12,6 @@ CREATE DATABASE nkmarina
     CONNECTION LIMIT = -1
     IS_TEMPLATE = False;
 
-COMMENT ON DATABASE nkmarina
-    IS 'Banco de dados do projeto da marina';
-
-
--- Table: public.embarcacao
-
--- DROP TABLE IF EXISTS public.embarcacao;
-
-CREATE TABLE IF NOT EXISTS public.embarcacao
-(
-    id_embarc bigint NOT NULL,
-    nm_embarc character varying(255) COLLATE pg_catalog."default" NOT NULL,
-    id_situacao integer NOT NULL,
-    dh_registro timestamp(6) without time zone NOT NULL,
-    CONSTRAINT embarcacao_pkey PRIMARY KEY (id_embarc)
-)
-
-TABLESPACE pg_default;
-
-ALTER TABLE IF EXISTS public.embarcacao
-    OWNER to postgres;
-
-
-
-CREATE TABLE IF NOT EXISTS public.cliente
-(
-    id_cliente smallint NOT NULL,
-    nm_cliente character(1) COLLATE pg_catalog."default" NOT NULL,
-    end_cliente character(1) COLLATE pg_catalog."default",
-    tel_cliente character(1) COLLATE pg_catalog."default" NOT NULL,
-    email_cliente character(1) COLLATE pg_catalog."default",
-    dt_inclusao date NOT NULL,
-    CONSTRAINT cliente_pkey PRIMARY KEY (id_cliente)
-)
-
-TABLESPACE pg_default;
-
-ALTER TABLE IF EXISTS public.cliente
-    OWNER to postgres;
-
-
 
 -- Table: public.agenda
 
@@ -60,11 +19,16 @@ ALTER TABLE IF EXISTS public.cliente
 
 CREATE TABLE IF NOT EXISTS public.agenda
 (
-    id_agenda smallint NOT NULL,
-    dh_cadastro date NOT NULL,
-    dh_solicitacao date NOT NULL,
-    id_situacao character(1) COLLATE pg_catalog."default" NOT NULL,
-    CONSTRAINT agenda_pkey PRIMARY KEY (id_agenda)
+    id_agenda integer NOT NULL,
+    dh_cadastro timestamp(6) without time zone NOT NULL,
+    dh_solicitacao timestamp(6) without time zone NOT NULL,
+    id_situacao character varying(1) COLLATE pg_catalog."default" NOT NULL,
+    id_cliente integer,
+    CONSTRAINT agenda_pkey PRIMARY KEY (id_agenda),
+    CONSTRAINT fk9ovuenx1vsuek79lwfi5mqng4 FOREIGN KEY (id_cliente)
+        REFERENCES public.cliente (id) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
 )
 
 TABLESPACE pg_default;
@@ -74,3 +38,48 @@ ALTER TABLE IF EXISTS public.agenda
 
 
 
+-- Table: public.cliente
+
+-- DROP TABLE IF EXISTS public.cliente;
+
+CREATE TABLE IF NOT EXISTS public.cliente
+(
+    id integer NOT NULL,
+    nm_cliente character varying(255) COLLATE pg_catalog."default" NOT NULL,
+    end_cliente character varying(255) COLLATE pg_catalog."default",
+    tel_cliente character varying(255) COLLATE pg_catalog."default" NOT NULL,
+    email_cliente character varying(255) COLLATE pg_catalog."default",
+    dt_inclusao timestamp(6) without time zone NOT NULL,
+    CONSTRAINT cliente_pkey PRIMARY KEY (id)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.cliente
+    OWNER to postgres;
+
+
+-- Table: public.embarcacao
+
+-- DROP TABLE IF EXISTS public.embarcacao;
+
+CREATE TABLE IF NOT EXISTS public.embarcacao
+(
+    id integer NOT NULL,
+    nm_embarc character varying(255) COLLATE pg_catalog."default" NOT NULL,
+    dh_registro timestamp(6) without time zone NOT NULL,
+    id_situacao character varying(255) COLLATE pg_catalog."default",
+    nr_marinha character varying(255) COLLATE pg_catalog."default",
+    id_cliente integer,
+    tipo integer,
+    CONSTRAINT embarcacao_pkey PRIMARY KEY (id),
+    CONSTRAINT fkfkqcdcylyf79pm40odbscnqgv FOREIGN KEY (id_cliente)
+        REFERENCES public.cliente (id) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.embarcacao
+    OWNER to postgres;
