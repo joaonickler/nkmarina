@@ -34,7 +34,7 @@ public class Cliente  implements Serializable {
 	@JsonFormat(pattern = "dd/MM/yyyy hh:mm")
 	private Date dt_inclusao;
 	
-	///@JsonIgnore
+	@JsonIgnore
 	@OneToMany(mappedBy = "cliente")
 	private List<Embarcacao> embarcacoes = new ArrayList<>();
 	

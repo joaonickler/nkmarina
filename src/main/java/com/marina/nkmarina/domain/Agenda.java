@@ -3,8 +3,8 @@ package com.marina.nkmarina.domain;
 import java.io.Serializable;
 import java.util.Date;
 
+import com.marina.nkmarina.domain.enums.TipoAgendaSituacao;
 import com.fasterxml.jackson.annotation.JsonFormat;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -29,7 +29,8 @@ public class Agenda   implements Serializable   {
 	@JsonFormat(pattern = "dd/MM/yyyy hh:mm")
 	private Date dh_solicitacao;
 	
-	private String id_situacao;
+	
+	private Integer situacao;
 		
 	@ManyToOne
 	@JoinColumn(name="id_cliente")
@@ -69,18 +70,8 @@ public class Agenda   implements Serializable   {
 	public void setDh_solicitacao(Date dh_solicitacao) {
 		this.dh_solicitacao = dh_solicitacao;
 	}
-
-
-	public String getId_situacao() {
-		return id_situacao;
-	}
-
-
-	public void setId_situacao(String id_situacao) {
-		this.id_situacao = id_situacao;
-	}
-
 	
+
 	public Cliente getCliente() {
 		return cliente;
 	}
@@ -91,23 +82,33 @@ public class Agenda   implements Serializable   {
 	}
 
 	
-	
-
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
 
 
-	public Agenda(Integer id_agenda, Date dh_cadastro, Date dh_solicitacao, String id_situacao, Cliente cliente  ) {
+
+	public Agenda(Integer id_agenda, Date dh_cadastro, Date dh_solicitacao,   TipoAgendaSituacao situacao,    Cliente cliente  ) {
 		super();
 		this.id_agenda = id_agenda;
 		this.dh_cadastro = dh_cadastro;
 		this.dh_solicitacao = dh_solicitacao;
-		this.id_situacao = id_situacao;
 		this.cliente = cliente;
 		
 	}
 
+	
+	public TipoAgendaSituacao  getSituacaoAgenda() {		
+		return TipoAgendaSituacao.toEnum(situacao);
+	}
+
+	
+	public void setSituacaoAgenda(TipoAgendaSituacao situacao) {
+		this.situacao = situacao.getCod();
+	}
+	
+	
+	
 
 	@Override
 	public int hashCode() {
