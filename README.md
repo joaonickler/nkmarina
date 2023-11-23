@@ -1,4 +1,4 @@
-Sistema de agendamento de serviços em embarcações
+Sistema de agendamento de serviços de embarcações náuticas, disponibilizado no formato WEB.
 
 Tarefas: 
         se encontram no https://trello.com/b/ROCHCbiw/nkmarina-projeto
