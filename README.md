@@ -23,7 +23,7 @@ Oportunidade:
 	Melhorar o serviço de agendamento e checagem dos itens das embarcações antes da saída para a viagem.
 
 Necessidade:  
-        Marina precisa de um sistema para realizar a organização dos processos do dia-a-dia para futuras viagens dos seus clientes
+        Marina precisa de um sistema WEB para realizar a organização dos processos do dia-a-dia para futuras viagens dos seus clientes
 
 
 
