@@ -1,4 +1,4 @@
-Sistema de agendamento de serviços de embarcações náuticas, disponibilizado no formato WEB.
+Sistema de Agendamento de serviços de embarcações náuticas, disponibilizado no formato WEB.
 
 Tarefas: 
         se encontram no https://trello.com/b/ROCHCbiw/nkmarina-projeto
@@ -31,6 +31,7 @@ BackEnd:
        Java, Spring Boot, JPA, Rest API
        Ide  -  Spring Tool Switch
        PostMan
+       Link Documentação API :  http://localhost:8080/swagger-ui/index.html
 Front End: 
        Angular, TypeScript, Html, CSS e BootsTrap;
        Ide: VSCode
