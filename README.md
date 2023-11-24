@@ -22,18 +22,20 @@ Identicação do Problema:
 Oportunidade: 
 	Melhorar o serviço de agendamento e checagem dos itens das embarcações antes da saída para a viagem.
 
+
 Necessidade:  
         Marina precisa de um sistema WEB para realizar a organização dos processos do dia-a-dia para futuras viagens dos seus clientes
 
 
 
 BackEnd: 
-       Java, Spring Boot, JPA, Rest API
-       Ide  -  Spring Tool Switch
-       PostMan
+       Linguagem  : Java , Frameword: Spring Boot (JPA,Rest)
+       Ide : Spring Tool Switch
+       Execução/Validações Api: PostMan
        Link Documentação API :  http://localhost:8080/swagger-ui/index.html
+       
 Front End: 
-       Angular, TypeScript, Html, CSS e BootsTrap;
+       Linguagem : Angular, TypeScript, Html, CSS, Material.Angular
        Ide: VSCode
 
 Banco de Dados:
