@@ -1,7 +1,6 @@
 package com.marina.nkmarina.resource;
 
 import java.util.List;
-
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,7 +13,7 @@ import com.marina.nkmarina.repository.AgendaRepository;
 
 
 @RestController
-@RequestMapping(value = "/agenda")
+@RequestMapping(value = "api/agenda")
 public class AgendaResource {
 
 	private AgendaRepository  agendaRepository;
@@ -25,11 +24,11 @@ public class AgendaResource {
     }
 	
 	@GetMapping	
-	public List<Agenda> lista() {
-		return agendaRepository.findAll();       
+	public List<Agenda> lista() {		
+		return agendaRepository.findAll();        
+		
     }
-	
-	
+		
 	
 	@GetMapping("/{id}")
     public Agenda getAgendaById(@PathVariable Integer id) {

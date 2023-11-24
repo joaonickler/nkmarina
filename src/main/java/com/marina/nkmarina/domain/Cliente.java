@@ -1,13 +1,9 @@
 package com.marina.nkmarina.domain;
-
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -24,34 +20,31 @@ public class Cliente  implements Serializable {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)	
-	private Integer id;
+	private Integer id_cliente;
 	
 	private String nm_cliente;
 	private String end_cliente;
 	private String tel_cliente;
-	private String email_cliente;
+	private String email_cliente;			
 	
-	@JsonFormat(pattern = "dd/MM/yyyy hh:mm")
-	private Date dt_inclusao;
-	
-	@JsonIgnore
-	@OneToMany(mappedBy = "cliente")
+	@OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL)	
 	private List<Embarcacao> embarcacoes = new ArrayList<>();
 	
-		
-	
+
 	public Cliente() {
 		
 	}
+		
 	
-	
-	public Integer getId() {
-		return id;
+	public Integer getId_cliente() {
+		return id_cliente;
 	}
 
-	public void setId(Integer id) {
-		this.id = id;
+
+	public void setId_cliente(Integer id_cliente) {
+		this.id_cliente = id_cliente;
 	}
+
 
 	public String getNm_cliente() {
 		return nm_cliente;
@@ -85,37 +78,59 @@ public class Cliente  implements Serializable {
 		this.email_cliente = email_cliente;
 	}
 
-	public Date getDt_inclusao() {
-		return dt_inclusao;
-	}
 
-	public void setDt_inclusao(Date dt_inclusao) {
-		this.dt_inclusao = dt_inclusao;
-	}
-
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
-	
-	public Cliente(Integer id, String nm_cliente, String end_cliente, String tel_cliente, String email_cliente,
-			Date dt_inclusao) {
+		
+	//List<Agenda> agenda	
+	public Cliente(Integer id_cliente, String nm_cliente, 
+					String end_cliente, String tel_cliente, 
+					String email_cliente,
+					List<Embarcacao> embarcacoes	 
+					) {
 		super();
-		this.id = id;
+		this.id_cliente = id_cliente;
 		this.nm_cliente = nm_cliente;
 		this.end_cliente = end_cliente;
 		this.tel_cliente = tel_cliente;
 		this.email_cliente = email_cliente;
-		this.dt_inclusao = dt_inclusao;
+		this.embarcacoes = embarcacoes;
+		//this.agenda = agenda;
 	}
+
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
+
 	
+	public List<Embarcacao> getEmbarcacoes() {
+		return embarcacoes;
+	}
+
+	public void setEmbarcacoes(List<Embarcacao> embarcacoes) {
+		this.embarcacoes = embarcacoes;
+	}
+
+	
+
+	//public List<Agenda> getAgenda() {
+	///	return agenda;
+	///}
+
+
+	///public void setAgenda(List<Agenda> agenda) {
+	///	this.agenda = agenda;
+	///}
+
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		result = prime * result + ((id_cliente == null) ? 0 : id_cliente.hashCode());
 		return result;
 	}
+
 
 	@Override
 	public boolean equals(Object obj) {
@@ -126,22 +141,20 @@ public class Cliente  implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		Cliente other = (Cliente) obj;
-		if (id == null) {
-			if (other.id != null)
+		if (id_cliente == null) {
+			if (other.id_cliente != null)
 				return false;
-		} else if (!id.equals(other.id))
+		} else if (!id_cliente.equals(other.id_cliente))
 			return false;
 		return true;
 	}
+	
+	
+	
+	
 
 	
-	public List<Embarcacao> getEmbarcacoes() {
-		return embarcacoes;
-	}
 
-	public void setEmbarcacoes(List<Embarcacao> embarcacoes) {
-		this.embarcacoes = embarcacoes;
-	}
 	
 	
 	

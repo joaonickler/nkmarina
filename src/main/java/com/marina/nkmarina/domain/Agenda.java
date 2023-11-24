@@ -3,14 +3,17 @@ package com.marina.nkmarina.domain;
 import java.io.Serializable;
 import java.util.Date;
 
-import com.marina.nkmarina.domain.enums.TipoAgendaSituacao;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.marina.nkmarina.domain.enums.TipoAgendaSituacao;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -21,64 +24,37 @@ public class Agenda   implements Serializable   {
 		
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id_agenda;	
+	private Integer id_agenda;		
 	
 	@JsonFormat(pattern = "dd/MM/yyyy hh:mm")
-	private Date dh_cadastro ;	
-	
+	private Date dh_cadastro_agenda ;		
 	@JsonFormat(pattern = "dd/MM/yyyy hh:mm")
-	private Date dh_solicitacao;
-	
-	
-	private Integer situacao;
+	private Date dh_solicit_agenda;		
+	private Integer situacao_agenda;
 		
-	@ManyToOne
-	@JoinColumn(name="id_cliente")
+	
+	@JsonIgnore
+	@OneToOne
+	@JoinColumn(name = "cliente_id")
 	private Cliente cliente;
 	
+	@ManyToOne
+	@JoinColumn (name = "embarc_id")
+	private Embarcacao embarcacao;		
 	
+			
+	public Embarcacao getEmbarcacao() {
+		return embarcacao;
+	}
+
+
+	public void setEmbarcacao(Embarcacao embarcacao) {
+		this.embarcacao = embarcacao;
+	}
+
+
 	public Agenda() {
 		
-	}
-
-
-	public Integer getId_agenda() {
-		return id_agenda;
-	}
-
-
-	public void setId_agenda(Integer id_agenda) {
-		this.id_agenda = id_agenda;
-	}
-
-
-	public Date getDh_cadastro() {
-		return dh_cadastro;
-	}
-
-
-	public void setDh_cadastro(Date dh_cadastro) {
-		this.dh_cadastro = dh_cadastro;
-	}
-
-
-	public Date getDh_solicitacao() {
-		return dh_solicitacao;
-	}
-
-
-	public void setDh_solicitacao(Date dh_solicitacao) {
-		this.dh_solicitacao = dh_solicitacao;
-	}
-	
-
-	public Cliente getCliente() {
-		return cliente;
-	}
-
-
-	public void setCliente(Cliente cliente) {
-		this.cliente = cliente;
 	}
 
 	
@@ -86,25 +62,89 @@ public class Agenda   implements Serializable   {
 		return serialVersionUID;
 	}
 
-
-
-	public Agenda(Integer id_agenda, Date dh_cadastro, Date dh_solicitacao,   TipoAgendaSituacao situacao,    Cliente cliente  ) {
+	
+	public Agenda(Integer id_agenda, 
+				Date dh_cadastro_agenda, 
+				Date dh_solicit_agenda, 
+				Integer situacao_agenda,
+				Cliente cliente,
+				Embarcacao embarcacao ) {
 		super();
 		this.id_agenda = id_agenda;
-		this.dh_cadastro = dh_cadastro;
-		this.dh_solicitacao = dh_solicitacao;
+		this.dh_cadastro_agenda = dh_cadastro_agenda;
+		this.dh_solicit_agenda = dh_solicit_agenda;
+		this.situacao_agenda = situacao_agenda;
 		this.cliente = cliente;
-		
+		this.embarcacao = embarcacao;
 	}
 
-	
+	public Integer getId_agenda() {
+		return id_agenda;
+	}
+
+
+
+	public void setId_agenda(Integer id_agenda) {
+		this.id_agenda = id_agenda;
+	}
+
+
+
+	public Date getDh_cadastro_agenda() {
+		return dh_cadastro_agenda;
+	}
+
+
+
+	public void setDh_cadastro_agenda(Date dh_cadastro_agenda) {
+		this.dh_cadastro_agenda = dh_cadastro_agenda;
+	}
+
+
+
+	public Date getDh_solicit_agenda() {
+		return dh_solicit_agenda;
+	}
+
+
+
+	public void setDh_solicit_agenda(Date dh_solicit_agenda) {
+		this.dh_solicit_agenda = dh_solicit_agenda;
+	}
+
+
+
+	public Integer getSituacao_agenda() {
+		return situacao_agenda;
+	}
+
+
+
+	public void setSituacao_agenda(Integer situacao_agenda) {
+		this.situacao_agenda = situacao_agenda;
+	}
+
+
+
+	public Cliente getCliente() {
+		return cliente;
+	}
+
+
+
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
+	}
+
+
+
 	public TipoAgendaSituacao  getSituacaoAgenda() {		
-		return TipoAgendaSituacao.toEnum(situacao);
+		return TipoAgendaSituacao.toEnum(situacao_agenda);
 	}
 
 	
 	public void setSituacaoAgenda(TipoAgendaSituacao situacao) {
-		this.situacao = situacao.getCod();
+		this.situacao_agenda = situacao.getCod();
 	}
 	
 	

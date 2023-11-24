@@ -3,11 +3,10 @@ package com.marina.nkmarina.domain.enums;
 
 public enum TipoAgendaSituacao {
 
-	ATIVA(1, "Pendente"),
-	CANCELADA (2, "Cancelada"),
-	CONCLUIDA (3, "Concluida");
-	
-	
+	ATIVA(1,"ATIVA"),
+	CANCELADA(2,"Cancelada"),
+	CONCLUIDA(3,"Concluida");
+		
 	private int cod;
 	private String  descricao;
 	

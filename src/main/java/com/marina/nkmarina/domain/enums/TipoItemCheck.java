@@ -1,19 +1,20 @@
 package com.marina.nkmarina.domain.enums;
 
 
-public enum TipoEmbarcacao {
+public enum TipoItemCheck {
 
-	BARCO	(1, "Barco"),
-	NAVIO 	(2, "Navio"),
-	IATE 	(3, "Iate"),
-	JETSIKI (4, "Jetski");
-	
-	
+	GASOLINA	(1, "GASOLINA"),
+	SEGURANÇA 	(2, "SEGURANÇA"),
+	MOTOR 		(3, "MOTOR"),
+	CORDAS 		(4, "CORDAS"),
+	CASCO 		(5, "CASCO"),
+	AGUA         (6, "AGUA");
+		
 	private int cod;
 	private String  descricao;	
 		
 	
-	private TipoEmbarcacao(int cod, String descricao) {
+	private TipoItemCheck(int cod, String descricao) {
 		this.cod = cod;
 		this.descricao = descricao;
 	}
@@ -31,23 +32,19 @@ public enum TipoEmbarcacao {
 		this.descricao = descricao;
 	}
 	
-		
-	public static TipoEmbarcacao toEnum(Integer cod) {
+	
+	public static TipoItemCheck toEnum(Integer cod) {
 		if (cod==null) {
 			return null;
 		}
 		
-		for (TipoEmbarcacao x :TipoEmbarcacao.values()) {
+		for (TipoItemCheck x :TipoItemCheck.values()) {
 			if (cod.equals(x.getCod())) {
 				return x;
 			}
 		}
 		
 		throw new IllegalArgumentException("ID Invalido: " + cod);
-	}
-	
-	
-	
-	
+	}	
 	
 }
