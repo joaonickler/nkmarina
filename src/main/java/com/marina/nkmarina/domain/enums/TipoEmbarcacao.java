@@ -9,16 +9,16 @@ public enum TipoEmbarcacao {
 	JETSIKI (4, "Jetski");
 	
 	
-	private int cod;
+	private Integer  cod;
 	private String  descricao;	
 		
 	
-	private TipoEmbarcacao(int cod, String descricao) {
+	private TipoEmbarcacao(Integer cod, String descricao) {
 		this.cod = cod;
 		this.descricao = descricao;
 	}
 	
-	public int getCod() {
+	public Integer getCod() {
 		return cod;
 	}
 	public void setCod(int cod) {
@@ -32,18 +32,18 @@ public enum TipoEmbarcacao {
 	}
 	
 		
-	public static TipoEmbarcacao toEnum(Integer cod) {
-		if (cod==null) {
+	public static TipoEmbarcacao  toEnum(Integer tipo_embarc) {
+		if (tipo_embarc==null) {
 			return null;
 		}
 		
 		for (TipoEmbarcacao x :TipoEmbarcacao.values()) {
-			if (cod.equals(x.getCod())) {
+			if (tipo_embarc.equals(x.getCod())) {
 				return x;
 			}
 		}
 		
-		throw new IllegalArgumentException("ID Invalido: " + cod);
+		throw new IllegalArgumentException("Código Invalido: " + tipo_embarc);
 	}
 	
 	

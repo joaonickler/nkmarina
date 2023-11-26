@@ -44,7 +44,6 @@ public class ClienteResource {
 	
 	
 	
-	
 
 	@GetMapping("/{id}")
 	@ResponseStatus(code = HttpStatus.CREATED)
@@ -57,12 +56,19 @@ public class ClienteResource {
 	@ResponseStatus(code = HttpStatus.CREATED)
     public Cliente Cliente (@RequestBody Cliente cliente) {
 		///cliente.setId_cliente(0);
+		for(var umaembarcacao: cliente.getEmbarcacoes()) {
+			umaembarcacao.setCliente(cliente);
+		}
 		return clienteRepository.save(cliente);
     }
+	
+	
+	
 	
 	@DeleteMapping("/{id}")
 	@ResponseStatus(code = HttpStatus.CREATED)
 	public void deleteCliente(@PathVariable Integer id) {
+		 
 		clienteRepository.deleteById(id);
 	}
 	

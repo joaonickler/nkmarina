@@ -78,14 +78,11 @@ public class Cliente  implements Serializable {
 		this.email_cliente = email_cliente;
 	}
 
-
-		
-	//List<Agenda> agenda	
+	
 	public Cliente(Integer id_cliente, String nm_cliente, 
 					String end_cliente, String tel_cliente, 
 					String email_cliente,
-					List<Embarcacao> embarcacoes	 
-					) {
+					List<Embarcacao> embarcacoes) {
 		super();
 		this.id_cliente = id_cliente;
 		this.nm_cliente = nm_cliente;
@@ -93,7 +90,7 @@ public class Cliente  implements Serializable {
 		this.tel_cliente = tel_cliente;
 		this.email_cliente = email_cliente;
 		this.embarcacoes = embarcacoes;
-		//this.agenda = agenda;
+		
 	}
 
 
@@ -112,17 +109,6 @@ public class Cliente  implements Serializable {
 	}
 
 	
-
-	//public List<Agenda> getAgenda() {
-	///	return agenda;
-	///}
-
-
-	///public void setAgenda(List<Agenda> agenda) {
-	///	this.agenda = agenda;
-	///}
-
-
 	@Override
 	public int hashCode() {
 		final int prime = 31;

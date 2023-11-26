@@ -5,6 +5,7 @@ import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.marina.nkmarina.domain.enums.TipoEmbarcacao;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -23,16 +24,21 @@ public class Embarcacao    implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id_embarc;	
 	
-	private String 	nm_embarc;		
+	private String nm_embarc;		
 	private Integer tipo_embarc;
-	private String  nrmarinha_embarc;
+	private String nrmarinha_embarc;
 	
 	
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name="cliente_id")	
 	@JsonBackReference
 	private Cliente cliente;
 		
+	
+	
+	
+	
+	
 	
 	public Embarcacao(){
 		
