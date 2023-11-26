@@ -5,9 +5,8 @@ CREATE TABLE IF NOT EXISTS public.usuario
     id bigint NOT NULL DEFAULT nextval('usuario_id_seq'::regclass),
     username character varying(255) COLLATE pg_catalog."default" NOT NULL,
     password character varying(255) COLLATE pg_catalog."default" NOT NULL,
-    enabled boolean NOT NULL,
-    CONSTRAINT usuario_pkey PRIMARY KEY (id),
-    CONSTRAINT usuario_username_key UNIQUE (username)
+    enabled boolean NOT NULL
+    
 )
 TABLESPACE pg_default;
 ALTER TABLE IF EXISTS public.usuario    OWNER to postgres;
@@ -34,12 +33,7 @@ CREATE TABLE IF NOT EXISTS public.embarcacao
     tipo_embarc integer,
     id_embarc integer NOT NULL DEFAULT nextval('embarc_id_embarc_seq'::regclass),
     nrmarinha_embarc character varying COLLATE pg_catalog."default",
-    cliente_id integer NOT NULL,
-    CONSTRAINT embarcacao_pkey PRIMARY KEY (id_embarc),
-    CONSTRAINT fkfkqcdcylyf79pm40odbscnqgv FOREIGN KEY (cliente_id)
-        REFERENCES public.cliente (id_cliente) MATCH SIMPLE
-        ON UPDATE NO ACTION
-        ON DELETE NO ACTION
+    cliente_id integer NOT NULL    
 )
 
 TABLESPACE pg_default;
@@ -98,11 +92,7 @@ CREATE TABLE IF NOT EXISTS public.checklist
     embarcacao_id integer NOT NULL,
     situacao_check character varying(1) COLLATE pg_catalog."default",
     tipo_check integer,
-    CONSTRAINT checklist_embarcacao_pkey PRIMARY KEY (id_check),
-    CONSTRAINT fkas2k9rncbmgib97te1lrbe00m FOREIGN KEY (embarcacao_id)
-        REFERENCES public.embarcacao (id_embarc) MATCH SIMPLE
-        ON UPDATE NO ACTION
-        ON DELETE NO ACTION
+    CONSTRAINT checklist_embarcacao_pkey PRIMARY KEY (id_check)   
 )
 
 TABLESPACE pg_default;
@@ -134,11 +124,8 @@ CREATE TABLE IF NOT EXISTS public.agenda
     cliente_id integer,
     situacao_agenda integer,
     embarc_id integer, 
-    CONSTRAINT agenda_pkey PRIMARY KEY (id_agenda),
-    CONSTRAINT fk9ovuenx1vsuek79lwfi5mqng4 FOREIGN KEY (cliente_id)
-        REFERENCES public.cliente (id_cliente) MATCH SIMPLE
-        ON UPDATE NO ACTION
-        ON DELETE NO ACTION
+    CONSTRAINT agenda_pkey PRIMARY KEY (id_agenda)
+    
 )
 
 TABLESPACE pg_default;
