@@ -38,6 +38,9 @@ Front End:
        Linguagem : Angular, TypeScript, Html, CSS, Material.Angular
        Ide: VSCode
 
+ Local Sonar :  https://sonarcloud.io/organizations/joaonickler/projects
+ 
+
 Banco de Dados:
         PostgreeSQL
 
