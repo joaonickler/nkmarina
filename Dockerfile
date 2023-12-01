@@ -1,6 +1,5 @@
 FROM ubuntu:latest AS build
 
-RUN sudo apt update
 RUN sudo apt install openjdk17-jdk
 COPY . .
 
