@@ -26,6 +26,8 @@ Oportunidade:
 Necessidade:  
         Marina precisa de um sistema WEB para realizar a organização dos processos do dia-a-dia para futuras viagens dos seus clientes
 
+
+
 Requisitos Funcionais:
 - Deve permitir inserção de clientes e vincular embarcações;
 - Deve permitir o registro de uma agenda para uma determinada embarcação do cliente;
@@ -40,18 +42,15 @@ Requisitos Não Funcionais:
 
 
 
+Parte Técnica:  
+![image](https://github.com/joaonickler/nkmarina/assets/90014083/97a79454-d708-48e5-ae9c-6d9e6bb96d80)
 
 
-BackEnd: 
-       Linguagem  : Java , Frameword: Spring Boot (JPA,Rest)
-       Ide : Spring Tool Switch
-       Execução/Validações Api: PostMan
-       Link Documentação API :  http://localhost:8080/swagger-ui/index.html
-       
-Front End: 
-       Linguagem : Angular, TypeScript, Html, CSS, Material.Angular
-       Ide: VSCode
 
+
+ 
+ Link Documentação API :  http://localhost:8080/swagger-ui/index.html
+ 
  Local Sonar :  https://sonarcloud.io/organizations/joaonickler/projects
  
 
