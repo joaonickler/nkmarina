@@ -26,6 +26,20 @@ Oportunidade:
 Necessidade:  
         Marina precisa de um sistema WEB para realizar a organização dos processos do dia-a-dia para futuras viagens dos seus clientes
 
+Requisitos Funcionais:
+- Deve permitir inserção de clientes e vincular embarcações;
+- Deve permitir o registro de uma agenda para uma determinada embarcação do cliente;
+- Inserção automática de CheckList da embarcação que foi agendada;
+- Em todas as interações : Inclusao, Exclusao e Edição;
+- Administração dos Usuarios, sendo atualmente possivel registrar um novo usuário;
+
+Requisitos Não Funcionais:
+- Sistema de fácil utilização;
+- Tempo de resposta rápido nas operações ou imediato;
+- Ser apto à mudanças de regras de negócio ou design;
+
+
+
 
 
 BackEnd: 
