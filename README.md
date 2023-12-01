@@ -52,7 +52,8 @@ Parte Técnica:
  Link Documentação API :  http://localhost:8080/swagger-ui/index.html
  
  Local Sonar :  https://sonarcloud.io/organizations/joaonickler/projects
- 
+
+ Local do Monitoramento:  Jaeger ( Localhost )
 
 Banco de Dados:
         PostgreeSQL
