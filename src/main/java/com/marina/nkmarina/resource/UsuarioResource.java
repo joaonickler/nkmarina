@@ -23,6 +23,7 @@ public class UsuarioResource {
     	this.usuarioRepository = agendaRepository;
     }
 	
+    
 	@GetMapping	
 	public List<Usuario> lista() {		
 		return usuarioRepository.findAll();        

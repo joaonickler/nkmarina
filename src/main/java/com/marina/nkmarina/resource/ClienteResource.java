@@ -2,6 +2,8 @@ package com.marina.nkmarina.resource;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,7 +24,8 @@ import com.marina.nkmarina.repository.ClienteRepository;
 public class ClienteResource {
 
 	private ClienteRepository  clienteRepository;
-	
+	 private Logger logger =
+		        LoggerFactory.getLogger(ClienteResource.class);
 	
 	public ClienteResource(ClienteRepository clienteRepository) {
         super();
@@ -32,6 +35,7 @@ public class ClienteResource {
 	@GetMapping	
 	@ResponseStatus(code = HttpStatus.CREATED)
 	public List<Cliente> lista() {
+		logger.info("get cliente");
 		return clienteRepository.findAll();       
     }
 	
@@ -39,6 +43,7 @@ public class ClienteResource {
 	@PutMapping
 	@ResponseStatus(code = HttpStatus.CREATED)
     public Cliente UpdateCliente (@RequestBody Cliente cliente) {
+		logger.info("put cliente");
 		return clienteRepository.save(cliente);
     }
 	
@@ -55,6 +60,7 @@ public class ClienteResource {
 	@PostMapping
 	@ResponseStatus(code = HttpStatus.CREATED)
     public Cliente Cliente (@RequestBody Cliente cliente) {
+		logger.info("post cliente");
 		///cliente.setId_cliente(0);
 		for(var umaembarcacao: cliente.getEmbarcacoes()) {
 			umaembarcacao.setCliente(cliente);

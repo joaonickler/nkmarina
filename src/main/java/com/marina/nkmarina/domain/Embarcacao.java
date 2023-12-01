@@ -38,8 +38,6 @@ public class Embarcacao    implements Serializable {
 	
 	
 	
-	
-	
 	public Embarcacao(){
 		
 	}

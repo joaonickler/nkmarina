@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.marina.nkmarina.domain.enums.TipoAgendaSituacao;
 
-
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -30,8 +30,10 @@ public class Agenda   implements Serializable   {
 	
 	@JsonFormat(pattern = "dd/MM/yyyy hh:mm")
 	private Date dh_cadastro_agenda ;		
+	
 	@JsonFormat(pattern = "dd/MM/yyyy hh:mm")
 	private Date dh_solicit_agenda;		
+	
 	private Integer situacao_agenda;
 		
 	
@@ -40,14 +42,12 @@ public class Agenda   implements Serializable   {
 	@JoinColumn(name = "cliente_id")
 	private Cliente cliente;
 	
-	@ManyToOne
+	@JsonIgnore
+	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn (name = "embarc_id")
 	private Embarcacao embarcacao;		
+		
 	
-	
-	
-	
-			
 	public Embarcacao getEmbarcacao() {
 		return embarcacao;
 	}
@@ -57,11 +57,10 @@ public class Agenda   implements Serializable   {
 		this.embarcacao = embarcacao;
 	}
 
-
+	
 	public Agenda() {
 		
 	}
-
 	
 	public static long getSerialversionuid() {
 		return serialVersionUID;
