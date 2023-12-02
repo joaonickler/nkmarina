@@ -1,60 +1,17 @@
-Sistema de Agendamento de serviços de embarcações náuticas, disponibilizado no formato WEB.
+# cursomc
+Curso de UML com Nélio Alves.
 
-Tarefas: 
-        se encontram no https://trello.com/b/ROCHCbiw/nkmarina-projeto
+Link do Curso. 
 
-Cliente:   
-        Uma marina com mais de 50 embarcações de pequeno, médio e de grande porte;
+https://clamed.udemy.com/course/uml-diagrama-de-classes/learn/lecture/9881750#overview
 
-Contato:
-        joao.nickler@catolicasc.edu.br
+Foram feitos diversos diagramas UML para apredizado e os fontes são parte final do curso. 
 
+Implementaçao em Java Spring Boot.
+Base de Dados PostGree
 
-Motivação do projeto:
-         Auxiliar marinas espalhadas pelo país, referente à agendamentos, cortando erros de comunicação, o sistema preza por alinhar pontos que devem ter verificação e manutenção antes da embarcação ir à água.
+![imagem](https://github.com/crmpereira/cursomc/assets/50237220/c6458526-d06d-4f45-9066-6eaeb0943ed9)
 
+[06-A01+estudo-de-caso-java-spring-boot.pdf](https://github.com/crmpereira/cursomc/files/12825248/06-A01%2Bestudo-de-caso-java-spring-boot.pdf)
 
-Identicação do Problema: 
-	Atualmente quando um cliente da marina precisa da embarcação ele faz uma ligação ou envia um WhatsApp solicitando. Com isto, o funcionário durante a semana faz uma verificação detalhada visada entre salvatagem, mecânica e estrutural, caso 
-        solictado. 
-	Muitas vezes o funcionário realiza apenas o que foi solicitado e o cliente acaba tendo problemas em alto mar que poderiam ser verificados anteriormente.
-
-Oportunidade: 
-	Melhorar o serviço de agendamento e checagem dos itens das embarcações antes da saída para a viagem.
-
-
-Necessidade:  
-        Marina precisa de um sistema WEB para realizar a organização dos processos do dia-a-dia para futuras viagens dos seus clientes
-
-
-
-Requisitos Funcionais:
-- Deve permitir inserção de clientes e vincular embarcações;
-- Deve permitir o registro de uma agenda para uma determinada embarcação do cliente;
-- Inserção automática de CheckList da embarcação que foi agendada;
-- Em todas as interações : Inclusao, Exclusao e Edição;
-- Administração dos Usuarios, sendo atualmente possivel registrar um novo usuário;
-
-Requisitos Não Funcionais:
-- Sistema de fácil utilização;
-- Tempo de resposta rápido nas operações ou imediato;
-- Ser apto à mudanças de regras de negócio ou design;
-
-
-
-Parte Técnica:  
-![image](https://github.com/joaonickler/nkmarina/assets/90014083/97a79454-d708-48e5-ae9c-6d9e6bb96d80)
-
-
-
-
- 
- Link Documentação API :  http://localhost:8080/swagger-ui/index.html
- 
- Local Sonar :  https://sonarcloud.io/organizations/joaonickler/projects
-
- Local do Monitoramento:  Jaeger ( Localhost )
-
-Banco de Dados:
-        PostgreeSQL
 

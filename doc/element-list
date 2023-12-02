@@ -1,0 +1,8 @@
+com.cesarpereira.cursomc
+com.cesarpereira.cursomc.domain
+com.cesarpereira.cursomc.domain.enums
+com.cesarpereira.cursomc.repositories
+com.cesarpereira.cursomc.resources
+com.cesarpereira.cursomc.resources.exception
+com.cesarpereira.cursomc.service
+com.cesarpereira.cursomc.service.exception
