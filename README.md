@@ -40,3 +40,12 @@ Local do Monitoramento: Jaeger ( Localhost )
 Banco de Dados: PostgreSQL
 
 ![image](https://github.com/joaonickler/nkmarina/assets/90014083/9de95845-e32d-4035-9fc5-65e55012dd1d)
+
+
+Cloud: FrontEnd : https://vercel.com/joao-nicklers-projects/nkmarinafront
+
+BackEnd e Banco Postgres : https://dashboard.render.com/
+
+Local da Aplicação : https://nkmarinafront.vercel.app/
+
+
