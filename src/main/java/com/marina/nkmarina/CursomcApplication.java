@@ -1,5 +1,8 @@
 package com.marina.nkmarina;
 
+import java.util.Arrays;
+import java.util.List;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
@@ -18,14 +21,13 @@ public class CursomcApplication {
 	
 	@Bean
 	public WebMvcConfigurer corsConfigurer() {
+		List<String> allowedOrigins = Arrays.asList("http://localhost:4200", "https://nkmarinafront.vercel.app");
+		
 		return new WebMvcConfigurer() {
 			@Override
+
 			public void addCorsMappings(CorsRegistry registry) {
-				registry.addMapping("/**")
-                .allowedOriginPatterns("*") // Permitir solicitações de qualquer origem
-                .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS") // Métodos HTTP permitidos
-                .allowedHeaders("*") // Permitir todos os cabeçalhos
-                .allowCredentials(true); // Permitir credenciais (por exemplo, cookies)
+				registry.addMapping("/**");
 			}
 		};
 	}
