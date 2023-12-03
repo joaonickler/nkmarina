@@ -9,7 +9,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.marina.nkmarina.domain.Agenda;
+//import com.marina.nkmarina.domain.CheckList;
 import com.marina.nkmarina.repository.AgendaRepository;
+///import com.marina.nkmarina.repository.CheckListRepository;
 
 
 @RestController
@@ -17,6 +19,7 @@ import com.marina.nkmarina.repository.AgendaRepository;
 public class AgendaResource {
 
 	private AgendaRepository  agendaRepository;
+	///private CheckListRepository  checkListRepository;
 	
 	public AgendaResource(AgendaRepository agendaRepository) {
         super();
@@ -38,7 +41,20 @@ public class AgendaResource {
 	
 	@PostMapping
     public Agenda Agenda (@RequestBody Agenda agenda) {
-        return agendaRepository.save(agenda);
+
+		/*
+		if (agenda.getId_agenda()==0){	
+			for (int i=1; i<=6; i++) {
+				var checkList1 = new CheckList();
+				checkList1.setEmbarcacao(agenda.getEmbarcacao());
+				checkList1.setSituacao_check("1");
+				checkList1.setTipo_check(i);
+				checkListRepository.save(checkList1);
+			}
+		}
+		*/
+		return agendaRepository.save(agenda);
+		
     }
 	
 	@DeleteMapping("/{id}")
@@ -50,3 +66,4 @@ public class AgendaResource {
 	
 	
 }
+

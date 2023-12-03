@@ -29,14 +29,7 @@
 			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
 			<version>2.1.0</version>
 		</dependency>
-
-		<!-- 
-		<dependency>
-			<groupId>io.opentracing.contrib</groupId>
-			<artifactId>opentracing-spring-jaeger-cloud-starter</artifactId>
-			<version>3.3.1</version>
-		</dependency>		
-		-->
+		
 		
 		 <!-- Spring Web -->
 		<dependency>
@@ -64,14 +57,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>			
 		</dependency>		
-		
-		
-		<!-- Segurança para Ver Depois
-		<dependency>
-    		<groupId>org.springframework.boot</groupId>
-    		<artifactId>spring-boot-starter-security</artifactId>
-		</dependency>
-		 -->
 		 
 		 
 			

@@ -37,12 +37,11 @@ public class Agenda   implements Serializable   {
 	private Integer situacao_agenda;
 		
 	
-	@JsonIgnore
-	@OneToOne
+	
+	@ManyToOne(cascade = CascadeType.ALL)  
 	@JoinColumn(name = "cliente_id")
 	private Cliente cliente;
-	
-	@JsonIgnore
+		
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn (name = "embarc_id")
 	private Embarcacao embarcacao;		

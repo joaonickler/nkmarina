@@ -11,6 +11,7 @@ import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 
+
 @SpringBootApplication
 public class CursomcApplication {
 
@@ -18,6 +19,7 @@ public class CursomcApplication {
 		SpringApplication.run(CursomcApplication.class, args);
 		
 	}
+	
 	
 	@Bean
 	public WebMvcConfigurer corsConfigurer() {

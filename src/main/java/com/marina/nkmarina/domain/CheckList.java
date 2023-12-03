@@ -2,9 +2,10 @@ package com.marina.nkmarina.domain;
 
 import java.io.Serializable;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+///import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.marina.nkmarina.domain.enums.TipoItemCheck;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -27,12 +28,12 @@ public class CheckList    implements Serializable {
 	private Integer tipo_check;	
 	private String  situacao_check;
 	
-	@JsonIgnore
-	@ManyToOne
+	
+	@ManyToOne(cascade = CascadeType.ALL) 
 	@JoinColumn(name = "embarcacao_id")
 	private Embarcacao embarcacao;
 	
-		
+	
 	
 	public Integer getTipo_check() {
 		return tipo_check;
