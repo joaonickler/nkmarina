@@ -29,14 +29,10 @@ public class Embarcacao    implements Serializable {
 	private String nrmarinha_embarc;
 	
 	
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne(cascade = {CascadeType.REFRESH})  
 	@JoinColumn(name="cliente_id")	
 	@JsonBackReference
 	private Cliente cliente;
-		
-	
-	
-	
 	
 	public Embarcacao(){
 		
@@ -46,7 +42,6 @@ public class Embarcacao    implements Serializable {
 		return serialVersionUID;
 	}
 				
-		
 	
 	public Embarcacao(Integer id_embarc, String nm_embarc, 
 						String situacao_embarc, Integer tipo_embarc,

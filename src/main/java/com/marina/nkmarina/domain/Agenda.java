@@ -3,9 +3,7 @@ package com.marina.nkmarina.domain;
 import java.io.Serializable;
 import java.util.Date;
 
-
 import com.fasterxml.jackson.annotation.JsonFormat;
-
 import com.marina.nkmarina.domain.enums.TipoAgendaSituacao;
 
 import jakarta.persistence.CascadeType;
@@ -15,7 +13,6 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-
 import jakarta.persistence.Table;
 
 @Entity
@@ -38,11 +35,11 @@ public class Agenda   implements Serializable   {
 		
 	
 	
-	@ManyToOne(cascade = CascadeType.ALL)  
+	@ManyToOne(cascade = {CascadeType.REFRESH})  
 	@JoinColumn(name = "cliente_id")
 	private Cliente cliente;
 		
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne(cascade = {CascadeType.REFRESH})  
 	@JoinColumn (name = "embarc_id")
 	private Embarcacao embarcacao;		
 		
